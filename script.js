@@ -4,7 +4,7 @@ let boardWidth = 360;
 let boardHeight = 640;
 let context;
 
-//bird
+
 let birdWidth = 34;
 let birdHeight = 24;
 let birdX = boardWidth / 8;
@@ -155,7 +155,7 @@ function detectCollision(a, b) {
 function startVoiceRecognition() {
     navigator.mediaDevices.getUserMedia({ audio: true })
         .then(stream => {
-            micEnabled = true; // Enable gravity only after mic is allowed
+            micEnabled = true; 
             let audioContext = new (window.AudioContext || window.webkitAudioContext)();
             let analyser = audioContext.createAnalyser();
             let microphone = audioContext.createMediaStreamSource(stream);
@@ -167,7 +167,7 @@ function startVoiceRecognition() {
             function analyzeAudio() {
                 analyser.getByteFrequencyData(dataArray);
                 let volume = dataArray.reduce((a, b) => a + b) / bufferLength;
-                if (volume > 100) {  // Adjusted sensitivity for better response
+                if (volume > 100) {  // Adjusted sensitivity 
                     velocityY = -4;
                 }
                 requestAnimationFrame(analyzeAudio);

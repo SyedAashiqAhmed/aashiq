@@ -1,4 +1,4 @@
-//board
+
 let board;
 let boardWidth = 360;
 let boardHeight = 640;
@@ -18,7 +18,7 @@ let bird = {
     height: birdHeight
 };
 
-//pipes
+
 let pipeArray = [];
 let pipeWidth = 64;
 let pipeHeight = 512;
@@ -28,14 +28,14 @@ let pipeY = 0;
 let topPipeImg;
 let bottomPipeImg;
 
-//physics
+
 let velocityX = -2;
 let velocityY = 0;
 let gravity = 0.4;
 
 let gameOver = false;
 let score = 0;
-let micEnabled = false; // Prevent bird movement before mic activation
+let micEnabled = false; 
 
 window.onload = function () {
     board = document.getElementById("board");
